@@ -23,8 +23,8 @@ symbols = [onKitchenTable, onBedTable, onCoffeeTable]
 def check_knowledge(knowledge):
     for symbol in symbols:
         if model_check(knowledge, symbol):
-            termcolor.cprint(f"{symbol}", "green")
-        #elif not model_check(knowledge, Not(symbol)):
-        #    print(f"{symbol}: False")
+            termcolor.cprint(f"{symbol}: YES", "green")
+        elif not model_check(knowledge, Not(symbol)):
+            print(f"{symbol}: MAYBE")
 
 check_knowledge(knowledge)
